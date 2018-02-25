@@ -22,11 +22,19 @@
 
 -- New algorithm for parsing simple arythmetic expressions.
 
--- rpn - it is the crucial function here
+{-
+It's not very likely that there can be anything new in the field of algorithms for parsing simple arithmetic expressions. 
+However, I was googling a bit and I have found nothing similar, so far!? No stack, no state machine, no Shunting-Yard, no anything here!
+So, I'll consider it new, for a while...
 
--- temp. asumptions: Only decimal integers (numbers from 0 to 9), binary operators (+, -, /, *) and parentheses in an expression.
+I find this approach good because it is scallable. It should be very simple to add new operators and rules.
+-}
 
-import Data.List 
+-- rpn - it is the crucial function
+
+import Data.Char
+import Data.List
+import System.IO  
 
 type Triplet = (String, Char, String)
 
@@ -35,8 +43,10 @@ type Triplet = (String, Char, String)
 -- The reversed precedence order (from lowest to highest precedence)
 -- Second parameter is associativity ( True = left2right; False = right2left)
 operators = [
+            (['>', '<', '='], False),  
             (['+', '-'], True),  
             (['*', '/', '%'], True),
+            (['^'], False)
             ]
 
 all_operators = foldl (\acc x -> acc ++ (fst x)) [] operators
@@ -67,6 +77,7 @@ left_prt_number (x:[])
    | otherwise =  0
 left_prt_number xs = foldl (\acc x -> if acc == -1 then -1 else acc + (left_prt_number $ x:[])) 0 xs
 
+
 --------------------------------------------------
 -- Breaks expression into the form [prefixString, char, suffixString] for the every character
 -- e.g. "abcde" -> [("", a, "bcde"),  ("a", b, "cde"),  ("ab", c, "de"),  ("abc", d, "e"),  ("abcd", e, "")]
@@ -95,11 +106,30 @@ rpn xs
          op = second found_node
          right = third found_node
 
+--------------------------------------------------
+handle_expr :: Int -> IO () 
+handle_expr _ = do
+   input <- getLine   
+   if input == "q" || input == "Q" then return ()
+   else do
+      putStrLn . rpn $ simplify input
+      handle_expr 1
+      
+--------------------------------------------------
+-- Main input-output loop
+main = do   
+   putStr "The program will transform arithmetic expressions into the postfix rpn-form.\n"
+   putStr "(Only numbers from 0 to 9 with the +*/- operators and parentheses are allowed.)\n"
+   putStr "Press 'q' to stop the application.\n\n"
+   handle_expr 1
          
          
+-- compile:
+-- ghc -o rpn rpn5.hs
+
 -- usage: 
--- rpn "8*(1*(2+3*(4-5)+6)-7)+5"   ( = "812345-*+6+*7-*5+" )
--- rpn "(((1*(2+3-4*5))))+(6-7*8)"   ( = "0123+45*-*-678*-+" )
--- rpn "(1+2)/((3-4-5))*(6-7*8/3+0)"    ( = "12+34-5-/678*3/-0+*" )
--- rpn "(4+5*(7-3))-2  ( = "4573-*+2-")
+-- 8*(1*(2+3*(4-5)+6)-7)+5   ( = 812345-*+6+*7-*5+ )
+-- (((1*(2+3-4*5))))+(6-7*8)   ( = 0123+45*-*-678*-+ )
+-- (1 + 2) / ( (  3 - 4 - 5) ) * ( 6-7*8 / 3+0)    ( = 12+34-5-/678*3/-0+* )
+-- (4 + 5 * (7 - 3)) - 2  ( = 4573-*+2-)
 
