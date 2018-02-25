@@ -22,14 +22,6 @@
 
 -- New algorithm for parsing simple arythmetic expressions.
 
-{-
-It's not very likely that there can be anything new in the field of algorithms for parsing simple arithmetic expressions. 
-However, I was googling a bit and I have found nothing similar, so far!? No stack, no state machine, no Shunting-Yard, no anything here!
-So, I'll consider it new, for a while...
-
-I find this approach good because it is scallable. It should be very simple to add new operators and rules.
--}
-
 -- rpn - it is the crucial function
 
 import Data.Char
@@ -77,7 +69,33 @@ left_prt_number (x:[])
    | otherwise =  0
 left_prt_number xs = foldl (\acc x -> if acc == -1 then -1 else acc + (left_prt_number $ x:[])) 0 xs
 
-
+--------------------------------------------------
+-- simplifies (and validates, by the way) the expression
+simplify :: String -> String
+simplify str
+   | null str2 = error "error: empty expression"
+   | ")" `isPrefixOf` str2 = error "error: the expression begins with the rigtht parentheses"
+   | "(" `isSuffixOf` str2 = error "error: the expression ends with the left parentheses"
+   | not $ all isValidChar str2  = error "error: invalid characters in the expression (neither digit nor operator nor parentheses)"
+   | left_prt_number str2 /= 0 = error "error: unmatching parentheses in the expression"
+   | "()" `isInfixOf` str2 = error "error: empty parentheses in the expression"
+   | head str `elem` all_operators = error "error: the expression begins with an operator (not allowed here, so far)"
+   | last str `elem` all_operators = error "error: the expression ends with an operator (not allowed here, so far)"
+   | any (`isInfixOf` str2) doubleDigitStr = error "error: two digit number (not allowed here, so far)"
+   | any (`isInfixOf` str2) doubleOperatorStr = error "error: two operators one next to another (not allowed here, so far)"
+   | any (`isInfixOf` str2) operatorInPrnthss = error "error: just an operator in parentheses"
+   | any (`isInfixOf` str2) prefixOperator = error "error: unary prefix operator (not allowed here, so far)"
+   | any (`isInfixOf` str2) postfixOperator = error "error: unary postfix operator (not allowed here, so far)"
+   | otherwise = str2
+   where str2 = filter (not . isSpace) str
+         -- isValidChar ch = isDigit ch || find (\ops -> ch `elem` fst ops) operators /= Nothing || ch `elem` "()"
+         isValidChar ch = isDigit ch || ch `elem` all_operators || ch `elem` "()"
+         doubleDigitStr = [[x,y] | x <- "0123456789", y <- "0123456789"]
+         doubleOperatorStr = [[x,y] | x <- all_operators, y <- all_operators]
+         operatorInPrnthss = [['(',x,')'] | x <- all_operators]
+         prefixOperator = [['(',x] | x <- all_operators]
+         postfixOperator = [[x,')'] | x <- all_operators]
+      
 --------------------------------------------------
 -- Breaks expression into the form [prefixString, char, suffixString] for the every character
 -- e.g. "abcde" -> [("", a, "bcde"),  ("a", b, "cde"),  ("ab", c, "de"),  ("abc", d, "e"),  ("abcd", e, "")]
@@ -118,9 +136,14 @@ handle_expr _ = do
 --------------------------------------------------
 -- Main input-output loop
 main = do   
-   putStr "The program will transform arithmetic expressions into the postfix rpn-form.\n"
-   putStr "(Only numbers from 0 to 9 with the +*/- operators and parentheses are allowed.)\n"
-   putStr "Press 'q' to stop the application.\n\n"
+   putStrLn "The program will transform arithmetic expressions into the postfix rpn-form."
+   putStrLn "At the moment,only numbers from 0 to 9 are allowed."
+   putStrLn "Just for the example, the operators are:"
+   putStrLn "> = <  (precedence: 4; association: right to left)"
+   putStrLn "+ -    (precedence: 3; association: left to right)" 
+   putStrLn "* / %  (precedence: 1; association: left to right)"
+   putStrLn "^      (precedence: 0; association: right to left)\n"
+   putStrLn "Press 'q' to stop the application.\n"
    handle_expr 1
          
          
@@ -128,8 +151,8 @@ main = do
 -- ghc -o rpn rpn5.hs
 
 -- usage: 
--- 8*(1*(2+3*(4-5)+6)-7)+5   ( = 812345-*+6+*7-*5+ )
--- (((1*(2+3-4*5))))+(6-7*8)   ( = 0123+45*-*-678*-+ )
--- (1 + 2) / ( (  3 - 4 - 5) ) * ( 6-7*8 / 3+0)    ( = 12+34-5-/678*3/-0+* )
--- (4 + 5 * (7 - 3)) - 2  ( = 4573-*+2-)
+-- 8*(1*(2+3*(4-5)+6)-7)+5   ( = "812345-*+6+*7-*5+" )
+-- (((1*(2+3-4*5))))+(6-7*8)   ( = "0123+45*-*-678*-+" )
+-- (1 + 2) / ( (  3 - 4 - 5) ) * ( 6-7*8 / 3+0)    ( = "12+34-5-/678*3/-0+*" )
+-- (4 + 5 * (7 - 3)) - 2  ( = "4573-*+2-")
 
