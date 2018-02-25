@@ -35,10 +35,8 @@ type Triplet = (String, Char, String)
 -- The reversed precedence order (from lowest to highest precedence)
 -- Second parameter is associativity ( True = left2right; False = right2left)
 operators = [
-            (['>', '<', '='], False),  
             (['+', '-'], True),  
             (['*', '/', '%'], True),
-            (['^'], False)
             ]
 
 all_operators = foldl (\acc x -> acc ++ (fst x)) [] operators
