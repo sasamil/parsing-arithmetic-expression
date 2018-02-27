@@ -19,4 +19,4 @@ etc.
 
 c) If no operator has been found, we are going to make next try with the operators of the next (higher) precedence level.
 
-d) If we have made searches for all the operators from all the precedence levels and found nothing - it means that entire expression if is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be just trimmed on both ends.
+d) If we have made searches for all the operators from all the precedence levels and found nothing - it means that entire expression is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be just trimmed on both ends and we are going on with a) again.
