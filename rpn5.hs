@@ -25,8 +25,7 @@
 -- rpn - it is the crucial function
 
 import Data.Char
-import Data.List
-import System.IO  
+import Data.List 
 
 type Triplet = (String, Char, String)
 
