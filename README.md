@@ -17,6 +17,6 @@ in the case of evaluation, it would be: eval = apply_operator(eval(left_subexpre
 in the case of building AST tree: ast = operator_node(ast(left_subexpression), ast(right_subexpression))<br/> 
 etc.
 
-c) If no operator has been found, we are going to make next try with the operators of next precedence level.
+c) If no operator has been found, we are going to make next try with the operators of the next (higher) precedence level.
 
 d) If we have made searches for all the operators from all the precedence levels and found nothing - it means that entire expression if is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be just trimmed on both ends.
