@@ -9,7 +9,7 @@ I find this approach promissing because it is scallable. It should be very simpl
 
 The main idea of this approach is: 
 
-a) We are searching for an operator of the lowest precedence level which is not embraced by any parentheses. We are always searching backwards i.e. if the operators associativity is left-to-right, we are searching from right-to-left in the expression. If the operators associativity is right-to-left, we are searching from left-to-right. 
+a) We are searching for an operator of the lowest precedence level which is not embraced by any parentheses. We are always searching backwards i.e. if the operators associativity is left-to-right, we are searching from-right-to-left in the expression. If the operators associativity is right-to-left, we are searching from-left-to-right. 
 
 b) When an operator is found, we are using the simple recursive formula, depending on the task we are doing:<br/>
 in the case of reverse Polish notation, it would be: <i>rpn = rpn(left subexpression) + rpn(right subexpression) + (operator)</i><br/>
