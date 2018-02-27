@@ -5,7 +5,7 @@ This code-example enables transforming simple arithmetic expressions into the co
 It's not very likely that there can be anything new in the field of algorithms for parsing arithmetic expressions. 
 However, I was googling a bit and so far, I have found nothing similar to this approach!? No stack, no state machine, no Shunting-Yard, no anything in this algorithm! So, I'll consider it new, for a while...
 
-I find this approach promissing because it is scallable. It should be very simple to add new operators and rules. All the same, we can apply this algorithm for different tasks. In a pretty much the same way, we can efficiently make AST trees, evaluate expressions, present them in <i>pre-order</i> form, handle unary operators, etc. In addition, the applied code is expected to be simple and readable, as a consiquence of a simple and straightforward idea.
+I find this approach promissing because it is scallable. It should be very simple to add new operators and rules. All the same, we can apply this algorithm for different tasks. In a pretty much the same way, we can efficiently make AST trees, evaluate expressions, present them in <i>pre-order</i> form, handle unary operators and functions, etc. In addition, the applied code is expected to be simple and readable, as a consiquence of a simple and straightforward idea.
 
 The main idea of this approach is: 
 
