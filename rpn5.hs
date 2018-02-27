@@ -40,8 +40,6 @@ operators = [
             (['^'], False)
             ]
 
-all_operators = foldl (\acc x -> acc ++ (fst x)) [] operators
-
 --------------------------------------------------
 first :: Triplet -> String
 first (a,_,_) = a
