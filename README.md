@@ -19,6 +19,6 @@ in the case of evaluation, it would be: <i>eval = apply_operator(eval(left_subex
 in the case of building AST tree: <i>ast = operator_node(ast(left_subexpression), ast(right_subexpression))</i><br/> 
 etc.
 
-c) If no operator has been found, we are going to make next try with the operators of the next (higher) precedence level.
+c) If no <i>free operator</i> has been found, we are going to make next try with the operators of the next (higher) precedence level.
 
-d) If no free operator has been found, it just means that the entire expression is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be just trimmed on both ends and we can go on with a) again.
+d) If we passed all the precedence levels and no <i>free operator</i> has been found, it just means that the entire expression is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be just trimmed on both ends and we can go on with a) again.
