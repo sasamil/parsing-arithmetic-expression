@@ -7,9 +7,11 @@ However, I was googling a bit and so far, I have found nothing similar to this a
 
 I find this approach promissing because it is scallable. It should be very simple to add new operators and rules. All the same, we can apply this algorithm for different tasks. In a pretty much the same way, we can efficiently make AST trees, evaluate expressions, present them in <i>pre-order</i> form, handle unary operators and functions, etc. In addition, the applied code is expected to be small and readable, as a consiquence of a simple and straightforward idea.
 
-The main idea of this approach is: 
+The main idea i.e. the main question of this approach is: "which operator (on which operands) should be executed last?"
 
-a) We are searching for an operator of the lowest precedence level which is not embraced by any parentheses. We are always searching backwards i.e. if the operators associativity is left-to-right, we are searching from-right-to-left in the expression. If the operators associativity is right-to-left, we are searching left-to-right. 
+It leads us to the following straightforward procedure:
+
+a) We are searching for a <i>free operator</i> of the lowest precedence level (free - not embraced by any parentheses). We are always searching backwards i.e. if the operators associativity is left-to-right, we are searching from-right-to-left in the expression. If the operators associativity is right-to-left, we are searching left-to-right. 
 
 b) When an operator is found, we are using the simple recursive formula, depending on the task we are doing:<br/>
 in the case of reverse Polish notation, it would be: <i>rpn = rpn(left subexpression) + rpn(right subexpression) + (operator)</i><br/>
@@ -19,4 +21,4 @@ etc.
 
 c) If no operator has been found, we are going to make next try with the operators of the next (higher) precedence level.
 
-d) If the entire expression is enclosed within the redundant parentheses (e.g. (x+y-z) ), parentheses should be just trimmed on both ends and we can go on with a) again.
+d) If no free operator has been found, it just means that the entire expression is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be just trimmed on both ends and we can go on with a) again.
