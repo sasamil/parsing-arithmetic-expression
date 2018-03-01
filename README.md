@@ -9,7 +9,7 @@ I find this approach promissing because it is scallable. It should be very simpl
 
 The main idea i.e. the main question of this approach is: "which operator (on which operands) should be executed last?"
 
-It leads us to the following straightforward procedure:
+It leads us to the following procedure:
 
 a) We are searching for a <i>free operator</i> of the lowest precedence level (free - not embraced by any parentheses). We are always searching backwards i.e. if the operators associativity is left-to-right, we are searching from-right-to-left in the expression. If the operators associativity is right-to-left, we are searching left-to-right. 
 
