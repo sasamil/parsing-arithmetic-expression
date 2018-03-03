@@ -14,7 +14,7 @@ It leads us to the following procedure:
 a) We are searching for a <i>free operator</i> of the lowest precedence level (free - not embraced by any parentheses). We are always searching backwards i.e. if the operators associativity is left-to-right, we are searching from-right-to-left in the expression. If the operators associativity is right-to-left, we are searching left-to-right. 
 
 b) When an operator is found, we are using the simple recursive formula, depending on the task we are doing:<br/>
-in the case of reverse Polish notation, it would be: <i>rpn = rpn(left subexpression) + rpn(right subexpression) + (operator)</i><br/>
+in the case of reverse Polish notation, it would be: <i>rpn = rpn(left_subexpression) + rpn(right_subexpression) + (operator)</i><br/>
 in the case of evaluation, it would be: <i>eval = apply_operator(eval(left_subexpression), eval(right_subexpression))</i><br/> 
 in the case of building AST tree: <i>ast = operator_node(ast(left_subexpression), ast(right_subexpression))</i><br/> 
 etc.
