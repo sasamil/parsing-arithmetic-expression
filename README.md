@@ -19,4 +19,4 @@ etc.
 
 c) If no <i>free operator</i> has been found, we are going to make next try with the operators of the next (higher) precedence level.
 
-d) If we passed all the precedence levels and no <i>free operator</i> has been found, it just means that the entire expression is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be just trimmed on both ends and we can go on with a) again.
+d) If we passed all the precedence levels and no <i>free operator</i> has been found, it just means that the entire expression is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be trimmed on both ends and we can go on with a) again.
