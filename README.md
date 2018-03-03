@@ -1,7 +1,7 @@
 # parsing-arithmetic-expression
 New approach to parsing simple arithmetic expressions. Widely applicable, scalable and fast, hopefully.
 
-This code-example enables transforming simple arithmetic expressions into the corresponding <i>post-order</i> rpn form.
+This code-example enables transforming of simple arithmetic expressions into the corresponding <i>post-order</i> rpn form.
 It's not very likely that there can be anything new in the field of algorithms for parsing arithmetic expressions. 
 However, I was googling a bit and so far, I have found nothing similar to this!? This method has not been mentioned in my books about discrete math and algorithms!? No stack, no state machine, no Shunting-Yard, no anything in this algorithm! So, I'll consider it new, for a while...
 
