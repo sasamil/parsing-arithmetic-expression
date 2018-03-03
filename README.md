@@ -7,7 +7,7 @@ However, I was googling a bit and so far, I have found nothing similar to this!?
 
 I find this approach promissing because it is scallable. It should be very simple to add new operators and rules. All the same, we can apply this algorithm for different tasks. In a pretty much the same way, we can efficiently make AST trees, evaluate expressions, present them in  <i>post-order</i> or <i>pre-order</i> form, handle unary operators and functions, etc. In addition, the applied code is expected to be small and readable, as a consequence of an extremely simple and straightforward idea.
 
-The main idea i.e. the main question of this approach is: <i>"which operator should be executed last?"</i>
+The main idea i.e. the main question of this approach is: <i>"which operator will be executed last?"</i>
 
 It leads us to the following procedure:
 
