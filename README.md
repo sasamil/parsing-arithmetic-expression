@@ -1,5 +1,5 @@
 # parsing-arithmetic-expression
-New approach to parsing simple arithmetic expressions. Widely applicable, scalable and fast, hopefully.
+New approach to the parsing of simple arithmetic expressions. Widely applicable, scalable and fast, hopefully.
 
 This code-example enables transforming of simple arithmetic expressions into the corresponding <i>post-order</i> rpn form.
 It's not very likely that there can be anything new in the field of algorithms for parsing arithmetic expressions. 
