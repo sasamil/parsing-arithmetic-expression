@@ -57,10 +57,10 @@ inline bool isOperatorFrom(const Operators& ops, const char ch) {
 //--------------------------------------------------------------
 // Find a free left2right operator belonging to given operators-array.
 // (for a LRB operators, it is the most right one, not embraced with parentheses)
-const char* findLRBOperatorIn(const Operators& ops, const char* str, const char* _end)
+const char* findLRBOperatorIn(const Operators& ops, const char* start, const char* _end)
 {
    int iRParentheses = 0; // Number of encountered right parentheses.
-   while (str < _end--) {
+   while (start < _end--) {
       const char ch = *_end;
       switch (ch) {
       case ')':
