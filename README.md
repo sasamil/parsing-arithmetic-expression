@@ -7,7 +7,7 @@ The main idea i.e. the main question of this approach is: <i>"which operator wil
 
 It leads us to the following procedure:
 
-a) We are searching for a <i>free operator</i> of the lowest precedence level (free - not embraced by any parentheses). We are always searching in the oposite direction i.e. if the operators associativity is left-to-right, we are searching from-right-to-left within the expression. If the operators associativity is right-to-left, we are searching left-to-right. 
+<p style="color:darkgray;">a) We are searching for a <i>free operator</i> of the lowest precedence level (free - not embraced by any parentheses). We are always searching in the oposite direction i.e. if the operators associativity is left-to-right, we are searching from-right-to-left within the expression. If the operators associativity is right-to-left, we are searching left-to-right. 
 
 b) When an operator is found, we are using the simple recursive formula, depending on the task we are doing:<br/>
 in the case of reverse Polish notation, it would be: <i>rpn = rpn(left_subexpression) + rpn(right_subexpression) + (operator)</i><br/>
@@ -17,6 +17,6 @@ etc.
 
 c) If no <i>free operator</i> has been found, we are going to make next try with the operators of the next (higher) precedence level.
 
-d) If we passed all the precedence levels and no <i>free operator</i> has been found, it just means that the entire expression is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be trimmed (or ignored) on both ends and we can go on with a) again.
+d) If we passed all the precedence levels and no <i>free operator</i> has been found, it just means that the entire expression is enclosed within the redundant parentheses (e.g. (x+y-z) ). In that case, parentheses should be trimmed (or ignored) on both ends and we can go on with a) again.</p>
 
 It's not very likely that there can be anything significantly <i>new</i> in the field of algorithms for parsing arithmetic expressions. It's hardly possible that something so simple can be <i>new</i>. However, I was googling and so far, I have found nothing similar to this!? I haven't found this method in the books about discrete math and algorithms!? No stack, no state machine, no Shunting-Yard, no anything in this algorithm! So, I'll consider it <i>new</i>, for a while...
