@@ -114,7 +114,7 @@ string rpn(const string& expr)
 
    auto fnp = [](bool b){return b ? findLRBOperatorIn : findRLBOperatorIn;}; // lambda to choose the right function
 
-   // Traverse the arrays of operators (with different precedence) and do reordering for the matching one
+   // Traverse the arrays of operators (with different precedence)
    for (int jj = 0; jj < NUM_PRECEDENCES; jj++) {
       auto const& ops = operators_arrays[jj];
       auto pos = fnp(ops.second)(ops.first, expr);
