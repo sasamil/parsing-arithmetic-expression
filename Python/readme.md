@@ -1,1 +1,1 @@
-Small Python code example to demonstarte the new approach for expression parsing. It is assumed that input-expression is valid and already tokenized (no blank spaces, no multi-character tokens). The focus is at new parsing algorithm here. So, please see the rpn-function.
+Small Python code example to demonstarte the new approach for expression parsing. It is assumed that input-expression is valid and already tokenized (no blank spaces, no multi-character tokens). The focus is at new parsing algorithm here. So, please see the "rpn" function, in code.
