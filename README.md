@@ -1,7 +1,7 @@
 # parsing-arithmetic-expression
 New approach to the parsing of simple arithmetic expressions. Widely applicable, scalable and fast, hopefully. This code-example enables transforming of simple arithmetic expressions into the corresponding <i>post-order</i> rpn form.
 
-It's not very likely that there can be any significant news in the field of algorithms for parsing arithmetic expressions. It's hardly possible that something so simple can be <i>new</i>. However, I was googling and so far, I have found nothing similar to this!? This method has not been mentioned in my books about discrete math and algorithms!? No stack, no state machine, no Shunting-Yard, no anything in this algorithm! So, I'll consider it new, for a while...
+It's not very likely that there can be any significant news in the field of algorithms for parsing arithmetic expressions. It's hardly possible that something so simple can be <i>new</i>. However, I was googling and so far, I have found nothing similar to this!? I haven't found this method in the books about discrete math and algorithms!? No stack, no state machine, no Shunting-Yard, no anything in this algorithm! So, I'll consider it new, for a while...
 
 I find this approach promissing because it is scallable. It should be very simple to add new operators and rules. All the same, we can apply this algorithm for different tasks. In a pretty much the same way, we can efficiently make AST trees, evaluate expressions, present them in  <i>post-order</i> or <i>pre-order</i> form, handle unary operators and functions, etc. In addition, the applied code is expected to be small, readable and <a href="https://github.com/sasamil/evaluating-arithmetic-expression">fast</a>, as a consequence of a simple and straightforward idea.
 
