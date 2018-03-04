@@ -83,7 +83,7 @@ const char* findLRBOperatorIn(const Operators& ops, const char* start, const cha
 // (for a RLB operators, it is the most left one, not embraced with parentheses)
 const char* findRLBOperatorIn(const Operators& ops, const char* start, const char* _end)
 {
-   int iLParentheses = 0; // Number of encountered right parentheses.
+   int iLParentheses = 0; // Number of encountered left parentheses.
    while (start < _end) {
       const char ch = *start;
       switch (ch) {
