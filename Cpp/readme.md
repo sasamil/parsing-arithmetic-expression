@@ -1,4 +1,4 @@
-Two c++ files are provided and they both work.
+Two c++ files are provided.
 
 <i>rpn_basic.cpp</i> - It has been made to be readable. The intention was to make the basic idea clear.
 
