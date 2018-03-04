@@ -30,9 +30,9 @@ def findLRBOperatorIn(ops, expr):
          iRParentheses -= 1
          # if iRParentheses < 0 raise ("invalid parentheses structure")
       elif iRParentheses == 0 and isOperatorFrom(ops, ch):
-         return end;
+         return end
 
-   return -1; # No operator found.
+   return -1 # No operator found.
 
 #-------------------------------------------------------------------------------
 def findRLBOperatorIn(ops, expr):
@@ -51,7 +51,7 @@ def findRLBOperatorIn(ops, expr):
          
       start += 1
 
-   return -1; # No operator found.
+   return -1 # No operator found.
 
 #-------------------------------------------------------------------------------
 def rpn(expr):
