@@ -7,7 +7,7 @@ The main idea i.e. the main question of this approach is: <i>"which operator wil
 
 It leads us to the following procedure:
 
-<p style="color:DodgerBlue;">a) We are searching for a <i>free operator</i> of the lowest precedence level (free - not embraced by any parentheses). We are always searching in the oposite direction i.e. if the operators associativity is left-to-right, we are searching from-right-to-left within the expression. If the operators associativity is right-to-left, we are searching left-to-right. 
+<p style="color:RGB(169, 169, 169);">a) We are searching for a <i>free operator</i> of the lowest precedence level (free - not embraced by any parentheses). We are always searching in the oposite direction i.e. if the operators associativity is left-to-right, we are searching from-right-to-left within the expression. If the operators associativity is right-to-left, we are searching left-to-right. 
 
 b) When an operator is found, we are using the simple recursive formula, depending on the task we are doing:<br/>
 in the case of reverse Polish notation, it would be: <i>rpn = rpn(left_subexpression) + rpn(right_subexpression) + (operator)</i><br/>
