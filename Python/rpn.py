@@ -78,12 +78,12 @@ def rpn(expr):
 def main():
 
   while (True):
-  	expr = raw_input()
+     expr = raw_input()
   	
-  	if expr == 'q' or expr == 'Q':
-  	  sys.exit(1)
+     if expr == 'q' or expr == 'Q':
+        sys.exit(1)
   	  
-  	print rpn(expr)
+     print rpn(expr)
 
 # -------------------------------------------------------------------------------
 if __name__ == '__main__':
