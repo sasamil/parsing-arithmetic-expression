@@ -1,4 +1,4 @@
-Small Python code example to demonstarte the new approach for expression parsing. It is assumed that input-expression is valid and already tokenized (no blank spaces, no multi-character tokens) - the focus is at new parsing algorithm here. The algorithm itself can be seen in the "rpn" function, in code.
+Small Python code example to demonstarte the new approach for expression parsing. It is assumed that input-expression is valid and already tokenized (no blank spaces, no multi-character tokens) - the focus is at parsing algorithm, here. The new algorithm itself can be seen in the "rpn" function.
 
 Two c++ files are provided.
 
