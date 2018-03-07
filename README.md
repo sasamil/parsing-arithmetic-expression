@@ -1,7 +1,7 @@
 # Parsing arithmetic expressions - new algorithm (zyx)
 New approach to the arithmetic expressions parsing. Applicable, scalable and fast, hopefully. It can be used in many ways depending of what we want to do with the input expression. This code-example is for transforming simple arithmetic expressions into the corresponding <i>post-order</i> rpn form.
 
-I find this approach promissing because it is scallable. It should be very simple to add new operators and rules. All the same, we can apply this algorithm for different tasks. In a pretty much the same way, we can efficiently make AST trees, evaluate expressions, present them in  <i>post-order</i> or <i>pre-order</i> form, handle unary operators and functions, etc. The applied code is expected to be small, readable and <a href="https://github.com/sasamil/evaluating-arithmetic-expression">fast</a>, as a consequence of a simple and straightforward idea.
+I find this approach promissing because it is scallable. It should be very simple to add new operators and rules. All the same, we can apply this algorithm for different tasks. In a pretty much the same way, we can efficiently make AST trees, evaluate expressions, present them in  <i>post-order</i> or <i>pre-order</i> form, handle unary operators and functions, etc. The applied code is expected to be small, readable and <a href="https://github.com/sasamil/New-algorithm-for-evaluating-arithmetic-expression">fast</a>, as a consequence of a simple and straightforward idea.
 
 The main idea i.e. the main question of this approach is: <i>"which operator will be executed last?"</i>
 
