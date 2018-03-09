@@ -1,7 +1,7 @@
 # Parsing arithmetic expressions - reverse recursive algorithm
-New approach to the arithmetic expressions parsing. Applicable, scalable and fast, hopefully. It can be used in many ways depending of what we want to do with the input expression. This code-example is for transforming simple arithmetic expressions into the corresponding <i>post-order</i> rpn form.
+New approach to the arithmetic expressions parsing. Applicable, scalable and fast. No stack, no state machine, no Shunting-Yard, no anything in this algorithm! It can be used in many ways depending of what we want to do with the input expression. This code-example is for transforming simple arithmetic expressions into the corresponding <i>post-order</i> rpn form.
 
-I find this approach promissing because it is scallable. It should be very simple to add new operators and rules. All the same, we can apply this algorithm for different tasks. In a pretty much the same way, we can efficiently make AST trees, evaluate expressions, present them in  <i>post-order</i> or <i>pre-order</i> form, handle unary operators and functions, etc. The applied code is expected to be small, readable and <a href="https://github.com/sasamil/New-algorithm-for-evaluating-arithmetic-expression">fast</a>, as a consequence of a simple and straightforward idea.
+I find this approach promissing because it is scallable. It should be very simple to add new operators and rules. All the same, we can apply this algorithm for different tasks. In a pretty much the same way, we can efficiently make AST trees, evaluate expressions, present them in  <i>post-order</i> or <i>pre-order</i> form, handle unary operators and functions, etc. The applied code is expected to be small, readable and <a href="https://github.com/sasamil/evaluating-arithmetic-expression">fast</a>, as a consequence of a simple and straightforward idea.
 
 The main idea i.e. the main question of this approach is: <i>"which operator will be executed last?"</i>
 
@@ -21,4 +21,4 @@ d) If we passed all the precedence levels and no <i>free operator</i> has been f
 
 <i>It's not very likely that there can be anything remarkably new in the field of algorithms for parsing arithmetic expressions. It's hardly possible that something so simple can be new. However, I was googling and so far, I have found nothing similar to this!? I haven't found this method in the books I have, about discrete math and algorithms!? <img src="http://forum.srpskinacionalisti.com/images/smilies/eusa_think.gif" alt="crazy" height="15" width="15"> 
   
-No stack, no state machine, no Shunting-Yard, no anything in this algorithm! So, I'll consider it new, for a while...</i>
+So, I'll consider it new, for a while...</i>
