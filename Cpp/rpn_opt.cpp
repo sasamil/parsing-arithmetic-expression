@@ -108,7 +108,7 @@ const char* findRLBOperatorIn(const Operators& ops, const char* start, const cha
 
 //--------------------------------------------------------------
 // A bit optimized version - prevents searching for the same operator twice (or more)
-// (indexops - index of precedence level, the search begins with)
+// (indexops - index of precedence level the search begins with)
 void rpn(const char* str, const char* _end, int indexops, char* result, int* resultit)
 {
    if (str + 1 == _end) { // if one-token expression only...
