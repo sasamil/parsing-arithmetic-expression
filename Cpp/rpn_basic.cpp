@@ -118,7 +118,7 @@ string rpn(const string& expr)
    for (int jj = 0; jj < NUM_PRECEDENCES; jj++) {
       auto const& ops = operators_arrays[jj];
       auto pos = fnp(ops.second)(ops.first, expr);
-      if (pos != -1) return rpn(expr.substr(0, pos)) + rpn(expr.substr(pos+1, length-pos-1)) + expr[pos];
+      if (pos != -1) return rpn(expr.substr(0, pos)) + rpn(expr.substr(pos+1, length-pos-1)) + expr[pos]; // The essential idea!
    }
 
    return rpn(expr.substr(1, length-2)); // ignore the enclosing parentheses
