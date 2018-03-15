@@ -70,7 +70,7 @@ def rpn(expr):
          pos = findRLBOperatorIn(ops, expr)
          
       if pos != -1:
-         return rpn(expr[0:pos]) + rpn(expr[pos+1:length]) + expr[pos] # The essence of SM algorithm. The essential idea.
+         return rpn(expr[0:pos]) + rpn(expr[pos+1:length]) + expr[pos] # The essence of the reverse-recursive algorithm. The essential idea.
 
    return rpn(expr[start+1:end-1]) # ignore/trim the enclosing parentheses
 
