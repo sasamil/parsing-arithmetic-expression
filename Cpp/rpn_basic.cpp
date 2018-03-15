@@ -27,8 +27,6 @@ using namespace std;
 typedef vector<char> Operators;
 typedef vector<pair<Operators, bool>> Operators2d;
 
-const int LSTR = 256;
-
 // Used operators. Four levels of precedence, in this example
 const Operators precedence_0_operators = { '^' };              // right-to-left
 const Operators precedence_1_operators = { '*', '/', '%'};     // left-to-right
