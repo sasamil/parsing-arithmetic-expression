@@ -44,7 +44,7 @@ const Operators precedence_3_operators = { '<', '>', '='};     // right-to-left
 const Operators2d operators_arrays = { make_pair(precedence_3_operators, false),
                                        make_pair(precedence_2_operators, true),
                                        make_pair(precedence_1_operators, true),
-                                       make_pair(precedence_0_operators, true)
+                                       make_pair(precedence_0_operators, false)
                                      };
 
 const int NUM_PRECEDENCES = operators_arrays.size();
