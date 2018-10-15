@@ -56,7 +56,7 @@ from_just Nothing = error "Maybe.from_just: Nothing"
 from_just (Just x) = x
 
 --------------------------------------------------
--- Number of left parenthises in string (counting from left to right)
+-- Number of left parenthises in a string (counting from left to right)
 -- (Number of right parentheses must not be greater in any moment - otherwise -1 returns)
 left_prt_number :: String -> Int 
 left_prt_number "" = 0
