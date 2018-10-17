@@ -74,7 +74,7 @@ int findLRBOperatorIn(const Operators& ops, const string& str)
       }
    }
 
-   return -1; // No operator has been found.
+   return -1; // no operator has been found.
 }
 
 //--------------------------------------------------------------
@@ -101,7 +101,7 @@ int findRLBOperatorIn(const Operators& ops, const string& str)
       start++;
    }
 
-   return -1; // No operator has been found.
+   return -1; // no operator has been found.
 }
 
 //--------------------------------------------------------------
