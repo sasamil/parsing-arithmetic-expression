@@ -21,4 +21,4 @@ d) If we passed all the precedence levels and no <i>free operator</i> has been f
 
 <i>It's not very likely that there can be anything remarkably new in the field of algorithms for parsing arithmetic expressions. However, I was googling and so far, I have found nothing similar to this!? I haven't found this method in the books about discrete math and algorithms!? Bewildering is that its logic is simpler and it turns out to be much faster than the most reputed relevant algorithm - Dijkstra's shunting-yard!? <img src="https://raw.githubusercontent.com/sasamil/WMS-TMS-Maker-Qt-GUI/master/icons/emoticons/eusa_think.gif" alt="crazy" height="15" width="15"> 
 
-If anybody knows that this (or similar) algorithm has already been published, please let me know. I would be very thankful. Until then, I'll consider it new...</i>
+If anybody knows that this (or similar) algorithm has already been published, please let me know. I would be very thankful. <strong>Until then, I'll consider it new<strong>...</i>
